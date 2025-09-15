@@ -16,4 +16,6 @@ The server receives DNS requests from the client, processes them, and prints the
 
 > **Note:** No external libraries need to be installed. If any additional libraries are required, install them using:
 ```bash
-pip install <library_name>
+pip install scapy
+
+
