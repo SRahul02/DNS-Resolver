@@ -6,7 +6,7 @@ Initiate server.py first.
 
 Requirements:
 - Python installed
-- Required libraries installed (like socket, struct, sys etc.)
+- Required libraries installed (like socket, scapy, datetime etc.)
 
 Result:
 The IP addresses will be printed as a result of server.py
