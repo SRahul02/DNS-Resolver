@@ -10,9 +10,9 @@ dns_pkts = [] #To store the list of DNS query pkts
 with PcapReader("8.pcap") as pcap:
     for pkt in pcap:
         if pkt.haslayer(DNS) and pkt[DNS].qr == 0: # Checking if the pkt is a DNS query.
-            seq_id = f"{cnt:02}" # Get the seq_id or seq_no (0-based, 2 digits) of the pkt
+            seq_id = str(cnt%100)
             timestamp = datetime.now().strftime("%H%M%S") # Creates real time timestamp to add to hdr
-            cstm_hdr = (timestamp+seq_id).encode("utf-8") # Creating the hdr
+            cstm_hdr = (timestamp+seq_id).encode() # Creating the hdr
            
             dns_pkts.append({ #Adding the pkt to the list of valid pkts with their custom hdrs
                 "custom_header": cstm_hdr,
